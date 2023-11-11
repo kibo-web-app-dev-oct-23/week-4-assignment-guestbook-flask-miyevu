@@ -1,0 +1,133 @@
+.entry-title {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.flash-messages {
+    list-style: none;
+    padding: 0;
+}
+
+.flash-message {
+    color: #f00;
+}
+
+.entry-form {
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.entry-label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.entry-input,
+.entry-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background: #333;
+    color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #555;
+}
+
+.view-button {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.view-button:hover {
+    background: #555;
+}
+
+
+/* Guestbook css */
+/* CSS for your HTML with classes */
+.guestbook-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.entry-title {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.filter-section {
+    margin: 20px 0;
+}
+
+.filter-label, .order-label {
+    font-weight: bold;
+}
+
+.filter-select, .order-select {
+    margin: 5px;
+    padding: 5px;
+}
+
+.apply-button {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.entry-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.entry-table th, .entry-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.entry-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #555;
+}

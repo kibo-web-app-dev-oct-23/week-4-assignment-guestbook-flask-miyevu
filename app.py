@@ -25,6 +25,15 @@ def init_db():
             )
         ''')
 
+def get_all_entries(sort_by='name', order='asc'):
+    # Function to retrieve all guestbook entries from the database
+    with get_db() as conn:
+        cursor = conn.cursor()
+        query = f'SELECT * FROM guests ORDER BY {sort_by} {order}'
+        cursor.execute(query)
+        entries = cursor.fetchall()
+    return entries
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # If we send POST request to create user
@@ -68,6 +77,10 @@ def view_guestbook():
     # Retrieve all guestbook entries from the database
     cursor.execute("SELECT name, email, message FROM guests")
     entries = cursor.fetchall()
+
+    filter_by = request.args.get('filter', 'name')
+    order = request.args.get('order', 'asc')
+    entries = get_all_entries(sort_by=filter_by, order=order)
 
     # Close the database connection
     conn.close()

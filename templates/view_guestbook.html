@@ -1,34 +1,50 @@
-<!-- view_guestbook.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Guestbook Entries</title>
 </head>
 <body>
-    <div>
-        <h2>Guestbook Entries</h2>
-        <table class="table">
+    <div class="guestbook-container">
+        <h2 class="entry-title">Guestbook Entries</h2>
+        <div class="filter-section">
+            <label for="filter" class="filter-label">Filter by:</label>
+            <select id="filter" name="filter" class="filter-select">
+                <option value="name">Name</option>
+                <option value="email">Email</option>
+                <option value="message">Message</option>
+            </select>
+
+            <label for="order" class="order-label">Sort order:</label>
+            <select id="order" name="order" class="order-select">
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+            <br>
+            <button id="apply-filters" class="apply-button" onclick="applyFilters()">Apply</button>
+        </div>
+        <table class="entry-table">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
+                    <th class="name-header">Name</th>
+                    <th class="email-header">Email</th>
+                    <th class="message-header">Message</th>
                 </tr>
             </thead>
             <tbody>
                 {% for entry in entries %}
                 <tr>
-                    <td>{{ entry[0] }}</td>
-                    <td>{{ entry[1] }}</td>
-                    <td>{{ entry[2] }}</td>
+                    <td class="name-cell">{{ entry[1] }}</td>
+                    <td class="email-cell">{{ entry[2] }}</td>
+                    <td class="message-cell">{{ entry[3] }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{ url_for('index') }}">Back to Guestbook</a>
+        <a href="{{ url_for('index') }}" class="back-link">Back to Guestbook</a>
     </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
