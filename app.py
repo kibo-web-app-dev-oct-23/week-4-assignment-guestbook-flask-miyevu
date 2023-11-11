@@ -53,7 +53,7 @@ def index():
         cursor.execute("SELECT name, email, message FROM guests")
         entries = cursor.fetchall()
         db.close()
-        return render_template('view_guestbook.html', entries=entries)  
+        return render_template('index.html', entries=entries)  
     # If we send GET request to get all users
     # add logic
 
